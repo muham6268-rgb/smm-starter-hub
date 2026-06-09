@@ -24,3 +24,217 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+body {
+  background: #111827;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.marquee-left {
+  animation: marquee-left 80s linear infinite;
+}
+
+.marquee-right {
+  animation: marquee-right 80s linear infinite;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.marquee-left {
+  animation: marquee-left 80s linear infinite;
+}
+
+.marquee-right {
+  animation: marquee-right 80s linear infinite;
+}
+
+.marquee-left:hover,
+.marquee-right:hover {
+  animation-play-state: paused;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes keepStraight {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes aiPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  2% {
+    transform: scale(1.08);
+  }
+
+  4% {
+    transform: scale(0.97);
+  }
+
+  6% {
+    transform: scale(1.03);
+  }
+
+  8% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.ai-pulse {
+  animation: aiPulse 5s infinite;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-6px);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
+
+  75% {
+    transform: translateX(-6px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes waveOne {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(120px, 60px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes waveTwo {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(-150px, 80px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes waveThree {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(100px, -100px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.animate-waveOne {
+  animation: waveOne 18s ease-in-out infinite;
+}
+
+.animate-waveTwo {
+  animation: waveTwo 24s ease-in-out infinite;
+}
+
+.animate-waveThree {
+  animation: waveThree 30s ease-in-out infinite;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
