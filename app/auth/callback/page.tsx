@@ -1,12 +1,10 @@
 "use client";
 
-export const dynamic = "force-dynamic";
-
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 
-export default function AuthCallback() {
+function AuthCallbackContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -28,21 +26,7 @@ export default function AuthCallback() {
           return;
         }
 
-        const { data: profile, error } = await supabase
-          .from("profiles")
-          .select("id")
-          .eq("id", user.id)
-          .maybeSingle();
-
-        if (error) {
-          console.error(error);
-        }
-
-        if (profile) {
-          router.push("/dashboard");
-        } else {
-          router.push("/dashboard");
-        }
+        router.push("/dashboard");
       } catch (error) {
         console.error(error);
         router.push("/login");
@@ -56,5 +40,13 @@ export default function AuthCallback() {
     <div className="min-h-screen bg-black flex items-center justify-center text-white">
       Tasdiqlanmoqda...
     </div>
+  );
+}
+
+export default function AuthCallback() {
+  return (
+    <Suspense fallback={<div>Yuklanmoqda...</div>}>
+      <AuthCallbackContent />
+    </Suspense>
   );
 }
